@@ -1,0 +1,74 @@
+#!/bin/sh
+
+# /etc/rc.d/rc.firewall - Start/stop IPv4 and IPv6 firewalls.
+
+IPV4_RULES="/etc/iptables/iptables.rules"
+IPV6_RULES="/etc/iptables/ip6tables.rules"
+
+firewall_start() {
+	if [ -e $IPV4_RULES ] ; then
+		echo -n "Restoring iptables rules from $IPV4_RULES... "
+		iptables-restore < $IPV4_RULES
+		if [ $? -eq 0 ] ; then
+			echo "done"
+		else
+			echo "FAILED"
+			exit 1
+		fi
+	fi
+
+	if [ -e $IPV6_RULES ] ; then
+		echo -n "Restoring ip6tables rules from $IPV6_RULES... "
+		ip6tables-restore < $IPV6_RULES
+		if [ $? -eq 0 ] ; then
+			echo "done"
+		else
+			echo "FAILED"
+			exit 1
+		fi
+	fi
+}
+
+firewall_stop() {
+	echo -n "Clearing iptables rules... "
+	iptables -F
+	iptables -X
+	iptables -t nat -F
+	iptables -t nat -X
+	iptables -t mangle -F
+	iptables -t mangle -X
+	iptables -P INPUT ACCEPT
+	iptables -P FORWARD ACCEPT
+	iptables -P OUTPUT ACCEPT
+	echo "done"
+	echo -n "Clearing ip6tables rules... "
+	ip6tables -F
+	ip6tables -X
+	ip6tables -t nat -F
+	ip6tables -t nat -X
+	ip6tables -t mangle -F
+	ip6tables -t mangle -X
+	ip6tables -P INPUT ACCEPT
+	ip6tables -P FORWARD ACCEPT
+	ip6tables -P OUTPUT ACCEPT
+	echo "done"
+}
+
+case "$1" in
+  start)
+    firewall_start
+    ;;
+  stop)
+    firewall_stop
+    ;;
+  restart)
+    firewall_stop
+    sleep 1
+    firewall_start
+    ;;
+  *)
+    echo "Usage: $(basename $0) {start|stop|restart}"
+    exit 1
+    ;;
+esac
+

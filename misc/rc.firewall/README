@@ -1,0 +1,6 @@
+rc.firewall Very simple ip(6)tables script which resets
+rules or reloads them from /etc/iptables/ip(6)tables.rules
+
+This is invoked on startup by /etc/rc.d/rc.inet2 on a
+default Slackware install.
+

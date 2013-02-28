@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.
+# Line up the first '|' above the ':' following the base package name, and
+# the '|' on the right side marks the last column you can put a character in.
+# You must make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+            |-----handy-ruler------------------------------------------------------|
+rc.firewall: rc.firewall is a very simple ip(6)tables script to reset/reload rules.
+rc.firewall:
+rc.firewall: rc.firewall Very simple ip(6)tables script which resets rules or
+rc.firewall: reloads them from /etc/iptables/ip(6)tables.rules
+rc.firewall:
+rc.firewall: This is invoked on startup by /etc/rc.d/rc.inet2 on a default Slackware
+rc.firewall: installation.
+rc.firewall:
+rc.firewall:
+rc.firewall:
+rc.firewall:
