@@ -1,4 +1,4 @@
-# Dump existing ip6tables rules into this file with:
+# Dump existing iptables rules into this file with:
 #
 # # iptables-save > /etc/iptables/iptables.rules
 
