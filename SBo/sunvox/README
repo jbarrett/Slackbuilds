@@ -7,4 +7,4 @@ It can import tracks from MIDI, XM and MOD files and samples
 from WAV, XI and AIFF files. It can export MIDI and WAV
 formats and has full MIDI IN/OUT support.
 
-SunVox requires SDL and supports ALSA, OSS and JACK.
+SunVox supports ALSA, OSS and JACK.

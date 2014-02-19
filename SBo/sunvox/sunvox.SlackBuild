@@ -23,7 +23,7 @@
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=sunvox
-VERSION=${VERSION:-1.7.3c}
+VERSION=${VERSION:-1.7.4b}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 
@@ -80,3 +80,4 @@ cat $CWD/slack-desc > $PKG/install/slack-desc
 
 cd $PKG
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
+
