@@ -30,8 +30,8 @@ TAG=${TAG:-_SBo}
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
     i?86) ARCH=i486 ;;
-    arm*) ARCH=arm ; exit 1 ;;
-       *) ARCH=$( uname -m ) ;;
+    arm*) ARCH=arm ;;
+    *) echo "Package for $(uname -m) architecture is not available." ; exit 1 ;;
   esac
 fi
 
