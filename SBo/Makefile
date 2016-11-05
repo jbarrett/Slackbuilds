@@ -4,7 +4,7 @@ sunvox.tar.gz: sunvox
 	tar czvf sunvox.tar.gz sunvox/{README,doinst.sh,slack-desc,sunvox.SlackBuild,sunvox.desktop,sunvox.info,sunvox.png}
 
 alsamodularsynth.tar.gz: alsamodularsynth
-	tar czvf alsamodularsynth.tar.gz alsamodularsynth/{README,alsamodularsynth.SlackBuild,alsamodularsynth.info,slack-desc}
+	tar czvf alsamodularsynth.tar.gz alsamodularsynth/{README,alsamodularsynth.SlackBuild,alsamodularsynth.info,slack-desc,configure.patch}
 
 
 libbs2b.tar.gz: libbs2b

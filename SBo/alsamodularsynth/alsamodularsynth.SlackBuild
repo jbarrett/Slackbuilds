@@ -63,6 +63,7 @@ mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $TARNAM-$VERSION
 tar xvf $CWD/$TARNAM-$VERSION.tar.bz2
+patch -p0 < $CWD/configure.patch
 cd $TARNAM-$VERSION
 chown -R root:root .
 find . \
