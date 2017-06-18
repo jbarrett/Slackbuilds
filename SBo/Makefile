@@ -1,4 +1,4 @@
-all: libbs2b.tar.gz alsamodularsynth.tar.gz sunvox.tar.gz
+all: libbs2b.tar.gz alsamodularsynth.tar.gz sunvox.tar.gz crack-attack.tar.gz
 
 sunvox.tar.gz: sunvox
 	tar czvf sunvox.tar.gz sunvox/{README,doinst.sh,slack-desc,sunvox.SlackBuild,sunvox.desktop,sunvox.info,sunvox.png}
@@ -9,4 +9,7 @@ alsamodularsynth.tar.gz: alsamodularsynth
 
 libbs2b.tar.gz: libbs2b
 	tar czvf libbs2b.tar.gz libbs2b/{README,libbs2b.SlackBuild,libbs2b.info,slack-desc}
+
+crack-attack.tar.gz: crack-attack
+	tar czvf crack-attack.tar.gz crack-attack/{README,crack-attack.SlackBuild,crack-attack.info,slack-desc,includes.patch}
 
