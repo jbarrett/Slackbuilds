@@ -1,0 +1,11 @@
+PRGNAM="steamlink"
+VERSION="1.1.89.225"
+HOMEPAGE="http://www.warmplace.ru/soft/sunvox/"
+DOWNLOAD="UNSUPPORTED"
+MD5SUM=""
+DOWNLOAD_x86_64=""
+MD5SUM_x86_64=""
+REQUIRES="ostree fakeroot"
+MAINTAINER="fuzzix"
+EMAIL="fuzzix@fuzzix.org"
+
