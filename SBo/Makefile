@@ -1,4 +1,4 @@
-all: libbs2b.tar.gz alsamodularsynth.tar.gz sunvox.tar.gz crack-attack.tar.gz libdatrie.tar.gz libthai.tar.gz
+all: libbs2b.tar.gz alsamodularsynth.tar.gz sunvox.tar.gz crack-attack.tar.gz libdatrie.tar.gz libthai.tar.gz steamlink.tar.gz
 
 sunvox.tar.gz: sunvox
 	tar czvf sunvox.tar.gz sunvox/{README,doinst.sh,slack-desc,sunvox.SlackBuild,sunvox.desktop,sunvox.info,sunvox.png}
@@ -17,3 +17,6 @@ libdatrie.tar.gz: libdatrie
 
 libthai.tar.gz: libthai
 	tar czvf libthai.tar.gz libthai/{README,libthai.SlackBuild,libthai.info,slack-desc}
+
+steamlink.tar.gz: steamlink
+	tar czvf steamlink.tar.gz steamlink/{README,doinst.sh,steamlink.SlackBuild,steamlink.info,slack-desc,steamlink.sh,flathub.gpg}
