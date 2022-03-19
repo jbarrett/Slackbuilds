@@ -46,6 +46,11 @@ PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 PKGTYPE=${PKGTYPE:-tgz}
 
+LIBDIRSUFFIX=""
+if [ "$ARCH" = "x86_64" ]; then
+  LIBDIRSUFFIX="64"
+fi
+
 set -e
 
 rm -rf $PKG
@@ -76,7 +81,6 @@ ninja
 DESTDIR=$PKG ninja install
 
 rm -f $PKG/usr/lib*/*.la
-#rm -f $PKG/lib*/*.la
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
