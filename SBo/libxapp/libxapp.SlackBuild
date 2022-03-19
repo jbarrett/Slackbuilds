@@ -56,7 +56,7 @@ set -e
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $PRGNAM-$VERSION
+rm -rf $PRJNAM-$VERSION
 tar xvf $CWD/$VERSION.tar.gz
 cd $PRJNAM-$VERSION
 chown -R root:root .
