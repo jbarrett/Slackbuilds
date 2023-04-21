@@ -33,7 +33,7 @@ PKGTYPE=${PKGTYPE:-tgz}
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
     i?86) ARCH=i586 ;;
-    arm*) ARCH=arm ;;
+#    arm*) ARCH=arm ;;
     *)    ARCH=$( uname -m ) ;;
   esac
 fi
@@ -72,10 +72,12 @@ BINDIR="$TMP/$PRGNAM/$PRGNAM/linux_x86/"
 [ $ARCH == 'arm' ] && BINDIR="$TMP/$PRGNAM/$PRGNAM/raspberry_pi/"
 
 install -Dm755 $BINDIR/${PRGNAM}* $PKG/usr/bin/
-if [ $ARCH == 'arm' ]; then
-    install -dm755 $PKG/lib/
-    ln -s ld-linux.so.3 $PKG/lib/ld-linux-armhf.so.3
-fi
+
+# I think this was a sketchy move to begin with ... but I no longer have Slackware on ARM to test it. Thoughts?
+#if [ $ARCH == 'arm' ]; then
+#    install -dm755 $PKG/lib/
+#    ln -s ld-linux.so.3 $PKG/lib/ld-linux-armhf.so.3
+#fi
 
 install -Dm644 $CWD/sunvox.desktop $PKG/usr/share/applications/
 install -Dm644 $CWD/sunvox.png $PKG/usr/share/sunvox/icon/
